@@ -1,0 +1,28 @@
+# Template file for 'matugen-bin'
+pkgname=matugen-bin
+version=3.1.0
+revision=1
+archs="x86_64"
+#build_wrksrc=
+#build_style=
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+#hostmakedepends=""
+#makedepends=""
+#depends=""
+short_desc="A material you color generation tool with templates"
+maintainer="torifork <torifork@github.com>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/InioX/matugen"
+#changelog=""
+distfiles="https://github.com/InioX/matugen/releases/download/v${version}/matugen-${version}-x86_64.tar.gz"
+checksum=dd124cc9907e31cd171fb156fbe05c00552476ad2f46f2d1b2af53bc07e181fd
+
+
+do_install() {
+    install -Dm755 matugen "${DESTDIR}/usr/bin/matugen"
+    install -Dm644 LICENSE "${DESTDIR}/usr/share/licenses/${pkgname}/LICENSE"
+}
