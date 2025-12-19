@@ -1,0 +1,28 @@
+pkgname=helium
+version=0.7.6.1
+revision=1
+archs="x86_64 aarch64"
+short_desc="Private, fast, and honest web browser"
+maintainer="al20ov <nicolas.antauf@gmail.com>"
+license="GPL-3.0-only AND BSD-3-Clause"
+homepage="https://helium.computer/"
+
+case "$XBPS_TARGET_MACHINE" in
+	x86_64)
+		distfiles="https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64_linux.tar.xz"
+		checksum="44bd0c32c62671ba19b7b6aad91ffaa272d7d5b4f19446e197007bc816fce28b"
+		;;
+	aarch64)
+		distfiles="https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-arm64_linux.tar.xz"
+		checksum="b64a941824817141292eb0256c9f40b708d84b0701721c7fa7969c06ba7a5ab9"
+		;;
+esac
+
+do_install() {
+	vmkdir usr/lib/helium
+	vcopy * usr/lib/helium
+	vmkdir usr/bin
+	ln -sf /usr/lib/helium/chrome ${DESTDIR}/usr/bin/helium
+
+	vinstall helium.desktop 644 usr/share/applications/
+}

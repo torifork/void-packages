@@ -1,5 +1,5 @@
-# Template file for 'matugen-bin'
-pkgname=matugen-bin
+# Template file for 'matugen'
+pkgname=matugen
 version=3.1.0
 revision=1
 archs="x86_64"
