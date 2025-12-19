@@ -1,6 +1,6 @@
 --- a/helium.desktop
 +++ b/helium.desktop
-@@ -3,7 +3,7 @@
+@@ -3,11 +3,11 @@ Version=1.0
  Name=Helium
  GenericName=Web Browser
  Comment=Access the Internet
@@ -9,7 +9,12 @@
  StartupNotify=true
  StartupWMClass=helium
  Terminal=false
-@@ -15,8 +15,8 @@
+-Icon=helium
++Icon=/usr/lib/helium/product_logo_256.png
+ Type=Application
+ Categories=Network;WebBrowser;
+ MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+@@ -15,8 +15,8 @@ Actions=new-window;new-private-window;
  
  [Desktop Action new-window]
  Name=New Window
