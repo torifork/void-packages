@@ -2,14 +2,11 @@
 pkgname=ani-skip
 version=1.0.1
 revision=1
-hostmakedepends=""
-makedepends=""
 depends="mpv fzf"
-short_desc="A script that offers an automated solution to bypass anime opening and ending sequences, enhancing your viewing experience by eliminating the need for manual intro and outro skipping."
+short_desc="Script that automates skipping anime opening/ending sequences"
 maintainer="torifork <jonass.main@proton.me>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/synacktraa/ani-skip"
-#changelog=""
 distfiles="https://github.com/synacktraa/ani-skip/archive/refs/tags/${version}.tar.gz"
 checksum=69a062e52962508178d95b8e3ab66bf4bcd7586727f1c420032161b42fa5c35f
 

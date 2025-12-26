@@ -2,16 +2,10 @@
 pkgname=matugen
 version=3.1.0
 revision=1
-archs="x86_64"
-short_desc="A material you color generation tool with templates"
+build_style=cargo
+short_desc="Material you color generation tool with templates"
 maintainer="torifork <torifork@github.com>"
-license="GPL-2.0-or-later"
+license="GPL-2.0-only"
 homepage="https://github.com/InioX/matugen"
-distfiles="https://github.com/InioX/matugen/releases/download/v${version}/matugen-${version}-x86_64.tar.gz"
-checksum=dd124cc9907e31cd171fb156fbe05c00552476ad2f46f2d1b2af53bc07e181fd
-
-
-do_install() {
-    install -Dm755 matugen "${DESTDIR}/usr/bin/matugen"
-    install -Dm644 LICENSE "${DESTDIR}/usr/share/licenses/${pkgname}/LICENSE"
-}
+distfiles="https://github.com/InioX/matugen/archive/refs/tags/v${version}.tar.gz"
+checksum=f00b7bd284ef6184a0c94d54cb745230c6e58f26012491eaf7f7bcea0f3a489b

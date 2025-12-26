@@ -1,0 +1,35 @@
+# Template file for 'mullvad-browser-bin'
+pkgname=mullvad-browser-bin
+version=15.0.3
+revision=1
+archs="x86_64"
+short_desc="Privacy-focused browser based on firefox and tor"
+maintainer="torifork <jonass.main@proton.me>"
+license="MPL-2.0"
+homepage="https://github.com/mullvad/mullvad-browser/"
+distfiles="https://github.com/mullvad/mullvad-browser/releases/download/${version}/mullvad-browser-linux-x86_64-${version}.tar.xz"
+checksum=aab8ca19a4b8198a7c0b82f31256cdf7ffafe4c60ab154476990ec0597b605cb
+nopie_files="/usr/lib/mullvad-browser/Browser/abicheck"
+
+do_install() {
+	local pkgname=mullvad-browser
+
+	vmkdir usr/lib/mullvad-browser
+
+	chmod -R a+r .
+	find . -executable -execdir chmod a+x '{}' +
+
+	vcopy * usr/lib/mullvad-browser
+
+	vinstall /dev/null 644 usr/lib/mullvad-browser/Browser system-install
+	vinstall /dev/null 644 usr/lib/mullvad-browser/Browser is-packaged-app
+
+	vmkdir usr/bin
+	ln -sf /usr/lib/mullvad-browser/Browser/start-mullvad-browser ${DESTDIR}/usr/bin/mullvad-browser
+
+	vinstall start-mullvad-browser.desktop 644 usr/share/applications/
+
+	for i in 16x16 32x32 48x48 64x64 128x128; do
+		vinstall Browser/browser/chrome/icons/default/default${i%x*}.png 644 usr/share/icons/hicolor/${i}/apps mullvad-browser.png
+	done
+}

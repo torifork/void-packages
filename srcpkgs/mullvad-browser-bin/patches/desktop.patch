@@ -1,0 +1,20 @@
+--- a/start-mullvad-browser.desktop
++++ b/start-mullvad-browser.desktop
+@@ -24,12 +24,13 @@
+ 
+ [Desktop Entry]
+ Type=Application
+-Name=Mullvad Browser Setup
++Name=Mullvad Browser
+ GenericName=Web Browser
+ Comment=Mullvad Browser is a privacy-focused web browser designed to minimize tracking and fingerprinting.
+ Categories=Network;WebBrowser;Security;
+-Exec=sh -c '"$(dirname "$*")"/Browser/start-mullvad-browser || ([ ! -x "$(dirname "$*")"/Browser/start-mullvad-browser ] && "$(dirname "$*")"/start-mullvad-browser)' dummy %k
+-X-MullvadBrowser-ExecShell=./Browser/start-mullvad-browser --detach
+-Icon=web-browser
++Exec=mullvad-browser %U
++X-MullvadBrowser-ExecShell=mullvad-browser --detach
++Icon=mullvad-browser
+ StartupNotify=true
+ StartupWMClass=Mullvad Browser
++Terminal=false

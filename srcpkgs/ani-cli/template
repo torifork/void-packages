@@ -2,10 +2,8 @@
 pkgname=ani-cli
 version=4.10
 revision=1
-hostmakedepends=""
-makedepends=""
 depends="grep sed curl mpv aria2 ffmpeg fzf"
-short_desc="A cli to browse and watch anime."
+short_desc="CLI to browse and watch anime"
 maintainer="torifork <jonass.main@proton.me>"
 license="GPL-3.0-only"
 homepage="https://github.com/pystardust/ani-cli"
@@ -13,7 +11,6 @@ distfiles="https://github.com/pystardust/ani-cli/archive/refs/tags/v${version}.t
 checksum=bf9a61baa70cbbe9028084982b2661c7a0d69823d82534b818abf49e2139d120
 
 do_install() {
-	vlicense LICENSE
 	vbin ani-cli
 	vman ani-cli.1
 }
